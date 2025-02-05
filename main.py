@@ -7,8 +7,8 @@ def main():
     testCorrectLoginInfo()
     testWrongLoginInfo()
     testLogOut()
-    addToCart()
-    removeItemFromCartItself()
+    testAddToCart()
+    testRemoveItemFromCartItself()
 
 def setup():
     chrome_options = Options()
@@ -64,7 +64,7 @@ def testLogOut():
     assert login.is_displayed()
     driver.quit()
 
-def addToCart():
+def testAddToCart():
     driver = setup()
     driver.get("https://www.saucedemo.com/")
     driver.implicitly_wait(10)
@@ -82,7 +82,7 @@ def addToCart():
     assert cartItemPresent.is_displayed()
     driver.quit()
 
-def removeItemFromCartItself():
+def testRemoveItemFromCartItself():
     driver = setup()
     driver.get("https://www.saucedemo.com/")
     driver.implicitly_wait(10)
